@@ -1,0 +1,69 @@
+Exercice 1
+
+2) It generates the methode 'System.out.println'
+3) It generates the methode 'toString'
+4) It generates a main method.
+5) a) It generates class constructor 
+   b) It generates set method for 'foo'
+6) It suggests to refactor (rename) the class name/ the field name.
+7) 
+
+Exercice 2 
+1) It works because we have a default class constructor that doesn't take any arguments.
+2) It doesn't work, fix : generate a getter for 'x' and 'y'
+3) To protect our field from inappropriate direct access
+4) Accessor is a method that returns the value of a private field ( getter ). Yes we have to create one here so we can access 'x' and 'y'
+5) We can not use this because the arguments don't have the same name as the fields, otherwise we should use 'this' to reference the class fields.
+6) It doesn't work, we should use the key word 'this' so the compiler does not confuse class variables and method arguments. 
+7) We create a static field 'nbPoints' and we increment it in the class constructor.
+8) The constructor knows which constructor to call based on the number and/or the type of the arguments that the constructor is called with.
+9) public String toString() {
+		// TODO Auto-generated method stub
+		return "("+x+","+y+")";
+	}
+
+Exercice 3
+1) the code prints : "True": because we affected P1 to P2 so when we call equals to compare these two it returns True, 
+"False" because even if P1 and P3 have got the same field values, they don't point the same object so when we call equals on them it returns False.
+
+2) public boolean isSameAs(Point p) {
+		if ((this.x == p.x) && (this.y == p.y)) return true; 
+		else return false;
+	}
+
+Exercice 4 
+1) public class PolyLine {
+	
+	private Point[] poly; 
+	private int index = 0; 
+	
+	public PolyLine(int nbmax) {
+		 poly = new Point[nbmax];
+	}
+	
+	public void add(Point p) {
+		if (index < poly.length) {
+			poly[index] = p;
+			index++;	
+		}
+		else {
+			System.out.println("IndexOutOfBounds");
+		}
+	}
+}
+
+2) If we add more points than the max capacity run time error.
+Solution : we need to throw an exception so add more than the max capacity of the array.
+
+5) If we add null, it adds null to the array.
+
+6) In an arrayList we don’t have a limit to the size of the list. PointCapacity is unlimited, nbPoints = the size of the list and the method contains won't change.
+
+Exercice 5: 
+1,5) Cf. code
+9) We should declare this method in TestPoint class.
+
+Exercice 6 : 
+1) Yes, because a Ring is a kind of Circles.
+4) We should redifine toString for this class, otherwise it prints the memory adress of the instance.
+ 
